@@ -11,7 +11,7 @@ export class Media {
   id: string;
 
   @Column({
-    type: 'enum',
+    type: 'varchar',
     enum: MediaType
   })
   type: MediaType;
