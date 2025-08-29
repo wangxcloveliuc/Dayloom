@@ -31,6 +31,33 @@
 $ npm install
 ```
 
+## Environment variables
+
+The backend reads configuration from environment variables (via `@nestjs/config`). Copy `.env.example` to `.env` and update values for your environment. `.env` is ignored by git.
+
+Important variables defined in `backend/.env.example`:
+
+- `DATABASE_PATH` — path to the SQLite file (default: `mylife.db`).
+- `TYPEORM_SYNC` — `true`/`false`. When `true`, TypeORM will auto-sync schema (useful in development only).
+- `TYPEORM_LOGGING` — `true`/`false`. Enables SQL logging.
+- `PORT` — HTTP port the app listens on (default: `3000`).
+- `ENABLE_CORS` — `true`/`false`. Enables CORS when `true`.
+- `JWT_SECRET` — Secret string used for signing JWTs (change in production).
+- `JWT_EXPIRES_IN` — Token TTL (e.g., `3600s`).
+- `MAX_IMAGE_SIZE_BYTES` — Max allowed image upload size in bytes (e.g., `5242880` = 5MB).
+- `MAX_VIDEO_SIZE_BYTES` — Max allowed video upload size in bytes (e.g., `52428800` = 50MB).
+
+Quick setup:
+
+```bash
+cd backend
+copy .env.example .env
+# edit .env as needed
+npm install
+npm run start:dev
+```
+
+
 ## Compile and run the project
 
 ```bash
