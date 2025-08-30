@@ -7,6 +7,8 @@ import { User } from './entities/user.entity';
 import { DiaryEntry } from './entities/diary-entry.entity';
 import { Media } from './entities/media.entity';
 import { Theme } from './entities/theme.entity';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -23,6 +25,8 @@ import { Theme } from './entities/theme.entity';
       }),
     }),
     TypeOrmModule.forFeature([User, DiaryEntry, Media, Theme]),
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
